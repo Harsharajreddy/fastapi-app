@@ -24,7 +24,7 @@ jobs:
 
     - name: Run tests inside Docker container
       run: |
-        docker run -e PYTHON=/app fastapi-app pytest
+        docker run -e PYTHONPATH=/app fastapi-app pytest
   deploy:
     runs-on: ubuntu-latest
     needs: build
