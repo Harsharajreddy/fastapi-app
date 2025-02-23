@@ -7,7 +7,7 @@ client = TestClient(app)
 def test_create_order():
     response = client.post("/orders/", json={
         "symbol": "AAPL",
-        "price": 125.35,
+        "price": 125,
         "quantity": 10,
         "order_type": "buy"
     })
@@ -15,7 +15,7 @@ def test_create_order():
     assert response.json() == {
         "id": 1,  
         "symbol": "AAPL",
-        "price": 125.35,
+        "price": 125,
         "quantity": 10,
         "order_type": "buy"
     }
