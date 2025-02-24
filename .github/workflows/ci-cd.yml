@@ -41,8 +41,15 @@ jobs:
         host: 3.145.168.139
         username: ec2-user
         key: ${{ secrets.EC2_SSH_KEY }}
+        port: 22
+        debug: true
         script: |
+          echo "Connected to EC2"
+          whoami
+          ls -lah ~/.ssh/
+          cat ~/.ssh/authorized_keys
           cd /home/ec2-user/fastapi-app
           git pull origin master
           docker-compose down || true
           docker-compose up -d --build
+
