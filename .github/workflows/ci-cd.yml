@@ -35,6 +35,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Ensure SSH Directory Exists
+      run: mkdir -p ~/.ssh
+
     - name: Decode SSH Key and Save
       run: |
         echo "${{ secrets.EC2_SSH_KEY }}" | base64 --decode > ~/.ssh/id_rsa
