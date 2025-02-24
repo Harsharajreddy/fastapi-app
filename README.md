@@ -45,9 +45,9 @@ Access the API at: `http://127.0.0.1:8000/docs`
 ### Build and Run the Docker Container  
 ```sh
 docker build -t fastapi-app .
-docker run -p 8000:80 fastapi-app
+docker run -p 80:80 fastapi-app
 ```
-The API will be accessible at: `http://localhost:8000/docs`  
+The API will be accessible at: `http://localhost/docs`  
 
 ### Using Docker Compose  
 ```sh
@@ -75,7 +75,7 @@ pytest
    ```sh
    docker-compose up -d --build
    ```
-5. Access the API at `http://<EC2-IP>:8000/docs`  
+5. Access the API at `http://<EC2-IP>/docs`  
 
 ## CI/CD with GitHub Actions  
 
@@ -125,4 +125,5 @@ Response:
     "order_type": "buy"
   }
 ]
+```
 ```
